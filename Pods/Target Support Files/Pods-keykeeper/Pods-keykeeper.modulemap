@@ -1,0 +1,6 @@
+framework module Pods_keykeeper {
+  umbrella header "Pods-keykeeper-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,409 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		67D0201DC8291DDE72FFB892 /* Pods_keykeeper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E3F07FD03C2659B599E7F96 /* Pods_keykeeper.framework */; };
+		68B4BD8A1DEA194000A76290 /* addInternetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B4BD881DEA194000A76290 /* addInternetPasswordVC.swift */; };
+		68B4BD8B1DEA194000A76290 /* addInternetPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68B4BD891DEA194000A76290 /* addInternetPasswordVC.xib */; };
+		68B4BD901DEAF1BF00A76290 /* addAppPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B4BD8E1DEAF1BF00A76290 /* addAppPasswordVC.swift */; };
+		68B4BD911DEAF1BF00A76290 /* addAppPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68B4BD8F1DEAF1BF00A76290 /* addAppPasswordVC.xib */; };
+		68C5CF821D8E94F10008266D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68C5CF811D8E94F10008266D /* Assets.xcassets */; };
+		68C5CF851D8E94F10008266D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68C5CF831D8E94F10008266D /* MainMenu.xib */; };
+		68FFA2171DC8CA96004B1132 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FFA2161DC8CA96004B1132 /* AppDelegate.swift */; };
+		68FFA2531DC8DCF2004B1132 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FFA2521DC8DCF2004B1132 /* EventMonitor.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4E3F07FD03C2659B599E7F96 /* Pods_keykeeper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_keykeeper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		68B4BD881DEA194000A76290 /* addInternetPasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addInternetPasswordVC.swift; sourceTree = "<group>"; };
+		68B4BD891DEA194000A76290 /* addInternetPasswordVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = addInternetPasswordVC.xib; sourceTree = "<group>"; };
+		68B4BD8E1DEAF1BF00A76290 /* addAppPasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addAppPasswordVC.swift; sourceTree = "<group>"; };
+		68B4BD8F1DEAF1BF00A76290 /* addAppPasswordVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = addAppPasswordVC.xib; sourceTree = "<group>"; };
+		68C5CF7C1D8E94F10008266D /* keykeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = keykeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		68C5CF811D8E94F10008266D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		68C5CF841D8E94F10008266D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		68C5CF861D8E94F10008266D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		68FFA2151DC8CA96004B1132 /* keykeeper-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "keykeeper-Bridging-Header.h"; sourceTree = "<group>"; };
+		68FFA2161DC8CA96004B1132 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		68FFA2521DC8DCF2004B1132 /* EventMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
+		B18D6FEB461AB8D433748C4A /* Pods-keykeeper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-keykeeper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-keykeeper/Pods-keykeeper.debug.xcconfig"; sourceTree = "<group>"; };
+		ED2E5B278157AF09302E9574 /* Pods-keykeeper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-keykeeper.release.xcconfig"; path = "Pods/Target Support Files/Pods-keykeeper/Pods-keykeeper.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		68C5CF791D8E94F10008266D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67D0201DC8291DDE72FFB892 /* Pods_keykeeper.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		68C5CF731D8E94F10008266D = {
+			isa = PBXGroup;
+			children = (
+				68C5CF7E1D8E94F10008266D /* keykeeper */,
+				68C5CF7D1D8E94F10008266D /* Products */,
+				728A64F7F4FCEA5429FEEB00 /* Pods */,
+				CEFF09EAD23D9639EBF06276 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		68C5CF7D1D8E94F10008266D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				68C5CF7C1D8E94F10008266D /* keykeeper.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		68C5CF7E1D8E94F10008266D /* keykeeper */ = {
+			isa = PBXGroup;
+			children = (
+				68FFA2521DC8DCF2004B1132 /* EventMonitor.swift */,
+				68FFA2161DC8CA96004B1132 /* AppDelegate.swift */,
+				68B4BD8E1DEAF1BF00A76290 /* addAppPasswordVC.swift */,
+				68B4BD881DEA194000A76290 /* addInternetPasswordVC.swift */,
+				68C5CF811D8E94F10008266D /* Assets.xcassets */,
+				68C5CF831D8E94F10008266D /* MainMenu.xib */,
+				68B4BD8F1DEAF1BF00A76290 /* addAppPasswordVC.xib */,
+				68B4BD891DEA194000A76290 /* addInternetPasswordVC.xib */,
+				68C5CF861D8E94F10008266D /* Info.plist */,
+				68FFA2151DC8CA96004B1132 /* keykeeper-Bridging-Header.h */,
+			);
+			path = keykeeper;
+			sourceTree = "<group>";
+		};
+		728A64F7F4FCEA5429FEEB00 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B18D6FEB461AB8D433748C4A /* Pods-keykeeper.debug.xcconfig */,
+				ED2E5B278157AF09302E9574 /* Pods-keykeeper.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CEFF09EAD23D9639EBF06276 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4E3F07FD03C2659B599E7F96 /* Pods_keykeeper.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		68C5CF7B1D8E94F10008266D /* keykeeper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 68C5CF891D8E94F10008266D /* Build configuration list for PBXNativeTarget "keykeeper" */;
+			buildPhases = (
+				AD2E37A3891BE3B3D18033DB /* [CP] Check Pods Manifest.lock */,
+				68C5CF781D8E94F10008266D /* Sources */,
+				68C5CF791D8E94F10008266D /* Frameworks */,
+				68C5CF7A1D8E94F10008266D /* Resources */,
+				0995D651DE2D4A57A57F3CB8 /* [CP] Embed Pods Frameworks */,
+				25BA2DE2D776767497A4B223 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = keykeeper;
+			productName = keykeeper;
+			productReference = 68C5CF7C1D8E94F10008266D /* keykeeper.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		68C5CF741D8E94F10008266D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = keykeeper;
+				TargetAttributes = {
+					68C5CF7B1D8E94F10008266D = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = AUHLTS98UR;
+						LastSwiftMigration = 0810;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 68C5CF771D8E94F10008266D /* Build configuration list for PBXProject "keykeeper" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 68C5CF731D8E94F10008266D;
+			productRefGroup = 68C5CF7D1D8E94F10008266D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				68C5CF7B1D8E94F10008266D /* keykeeper */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		68C5CF7A1D8E94F10008266D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68C5CF821D8E94F10008266D /* Assets.xcassets in Resources */,
+				68C5CF851D8E94F10008266D /* MainMenu.xib in Resources */,
+				68B4BD8B1DEA194000A76290 /* addInternetPasswordVC.xib in Resources */,
+				68B4BD911DEAF1BF00A76290 /* addAppPasswordVC.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0995D651DE2D4A57A57F3CB8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-keykeeper/Pods-keykeeper-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		25BA2DE2D776767497A4B223 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-keykeeper/Pods-keykeeper-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AD2E37A3891BE3B3D18033DB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		68C5CF781D8E94F10008266D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68FFA2531DC8DCF2004B1132 /* EventMonitor.swift in Sources */,
+				68FFA2171DC8CA96004B1132 /* AppDelegate.swift in Sources */,
+				68B4BD8A1DEA194000A76290 /* addInternetPasswordVC.swift in Sources */,
+				68B4BD901DEAF1BF00A76290 /* addAppPasswordVC.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		68C5CF831D8E94F10008266D /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				68C5CF841D8E94F10008266D /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		68C5CF871D8E94F10008266D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		68C5CF881D8E94F10008266D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		68C5CF8A1D8E94F10008266D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B18D6FEB461AB8D433748C4A /* Pods-keykeeper.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = keykeeper/keykeeper.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = AUHLTS98UR;
+				INFOPLIST_FILE = keykeeper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = co.keykeeper.keykeeper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "keykeeper/keykeeper-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		68C5CF8B1D8E94F10008266D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED2E5B278157AF09302E9574 /* Pods-keykeeper.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = keykeeper/keykeeper.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = AUHLTS98UR;
+				INFOPLIST_FILE = keykeeper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = co.keykeeper.keykeeper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "keykeeper/keykeeper-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		68C5CF771D8E94F10008266D /* Build configuration list for PBXProject "keykeeper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				68C5CF871D8E94F10008266D /* Debug */,
+				68C5CF881D8E94F10008266D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		68C5CF891D8E94F10008266D /* Build configuration list for PBXNativeTarget "keykeeper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				68C5CF8A1D8E94F10008266D /* Debug */,
+				68C5CF8B1D8E94F10008266D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 68C5CF741D8E94F10008266D /* Project object */;
+}
