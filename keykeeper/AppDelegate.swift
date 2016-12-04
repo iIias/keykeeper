@@ -50,7 +50,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var copyString: String = ""
     
     func addMenuItems() {
-        let addKeyItem = NSMenuItem(title: "🔐 Add Key", action: #selector(self.noFunction), keyEquivalent: "")
+        let addKeyItem = NSMenuItem(title: "🔐 Add Password", action: #selector(self.noFunction), keyEquivalent: "")
         let deletePasswordItem = NSMenuItem(title: "🗑 Remove Password", action: #selector(self.noFunction), keyEquivalent: "")
         let clipboardItem = NSMenuItem(title: "🖨 Copy Password", action: #selector(self.noFunction), keyEquivalent: "")
         menu.addItem(NSMenuItem.separator())
@@ -59,20 +59,29 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         menu.addItem(NSMenuItem.separator())
         menu.addItem(addKeyItem)
         menu.addItem(clipboardItem)
-        addKeyMenu.addItem(NSMenuItem(title: "🌐 Add Internet Password", action: #selector(self.showInternetPopover), keyEquivalent: ""))
-        addKeyMenu.addItem(NSMenuItem(title: "🔑 Add App Password", action: #selector(self.showAppPopover), keyEquivalent: ""))
-        addKeyMenu.addItem(NSMenuItem(title: "💳 Add Credit Card", action: #selector(self.noFunction), keyEquivalent: ""))
+        addKeyMenu.addItem(NSMenuItem(title: "🌐 Add Website Password", action: #selector(self.showInternetPopover), keyEquivalent: ""))
+        addKeyMenu.addItem(NSMenuItem(title: "🔑 Add Password", action: #selector(self.showAppPopover), keyEquivalent: ""))
         menu.addItem(deletePasswordItem)
         menu.addItem(NSMenuItem.separator())
+        menu.addItem(NSMenuItem(title: "🔄 Refresh", action: #selector(self.refreshMenu), keyEquivalent: ""))
         menu.addItem(NSMenuItem(title: "❌ Quit", action: #selector(self.quit), keyEquivalent: ""))
         clipboardItem.submenu = clipboardMenu
         deletePasswordItem.submenu = deletePasswordMenu
         addKeyItem.submenu = addKeyMenu
         
-      /*  for (index, value) in internetKeychain.allKeys().enumerated() {
+      /*  let keys = addInternetPasswordVC().internetKeychain.allKeys()
+        for key in keys {
+            deletePasswordMenu.addItem(NSMenuItem(title: "🚮 \(key)", action: Selector(self.deleteKey(key:"\(key)")), keyEquivalent: ""));
+        } */
+        
+     /*   for value in addInternetPasswordVC().internetKeychain.allKeys().enumerated() {
             print("Item \(index): \(value)")
-            deletePasswordMenu.addItem(NSMenuItem(title: "🚮 \(value)", action: #selector(AppDelegate.deleteKey), keyEquivalent: ""));
-            clipboardMenu.addItem(NSMenuItem(title: "🔗 \(value)", action: #selector(AppDelegate.copyToPasteboard), keyEquivalent: "")); } */ } 
+            deletePasswordMenu.addItem(NSMenuItem(title: "🚮 \(value)", action: Selector(self.deleteKey), keyEquivalent: ""));
+            clipboardMenu.addItem(NSMenuItem(title: "🔗 \(value)", action: #selector(AppDelegate.copyToPasteboard), keyEquivalent: "")); } */
+    
+    for (_, value) in addInternetPasswordVC().internetKeychain.allKeys().enumerated() {
+        deletePasswordMenu.addItem(NSMenuItem(title: "🚮 \(value)", action: Selector(self.deleteKey(key:"\(value)")), keyEquivalent: ""));
+        } }
     
     func refreshMenu() {
         menu.removeAllItems()
@@ -128,13 +137,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let token = try! addInternetPasswordVC().internetKeychain.get("\(copyString)")
         pasteboard.setString("\(token!)", forType: NSPasteboardTypeString) }
     
-    func deleteKey() {
+    func deleteKey(key: String) -> String {
         do {
-        try addInternetPasswordVC().internetKeychain.remove("\(deleteString)")
-        print("key: \(deleteString) has been removed")
+        try addInternetPasswordVC().internetKeychain.remove("\(key)")
+        print("key: \(key) has been removed")
     } catch let error {
         print("error: \(error)") }
-     refreshMenu() }
+     refreshMenu()
+    return key }
     
     func lockKeykeeper() {
         SecKeychainLock(keykeeper) } // lock current keykeeper
