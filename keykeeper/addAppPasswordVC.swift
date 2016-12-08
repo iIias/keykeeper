@@ -33,8 +33,8 @@ class addAppPasswordVC: NSViewController {
     @IBOutlet weak var pwSecureTextField: NSSecureTextField!
     @IBOutlet weak var usernameTextField: NSTextField!
     @IBOutlet weak var titleTextField: NSTextField!
+    let appKeychain = Keychain(service: "co.keykeeper.keykeeper")
     @IBAction func addAppPasswordAction(_ sender: Any) {
-        let appKeychain = Keychain(service: "co.keykeeper.keykeeper", accessGroup: "AUHLTS98UR.shared")
         do {
             try appKeychain
                 .accessibility(.afterFirstUnlock)
@@ -45,6 +45,8 @@ class addAppPasswordVC: NSViewController {
         } catch let error {
             print("error: \(error)")
         }
+        AppDelegate().closeAppPopover(sender: sender as AnyObject?)
+        AppDelegate().refreshMenu()
         commentTextField.stringValue = ""
         pwSecureTextField.stringValue = ""
         usernameTextField.stringValue = ""
