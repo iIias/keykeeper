@@ -63,24 +63,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         addKeyMenu.addItem(NSMenuItem(title: "🔑 Add Password", action: #selector(self.showAppPopover), keyEquivalent: ""))
         menu.addItem(deletePasswordItem)
         menu.addItem(NSMenuItem.separator())
-        menu.addItem(NSMenuItem(title: "🔄 Refresh", action: #selector(self.refreshMenu), keyEquivalent: ""))
         menu.addItem(NSMenuItem(title: "❌ Quit", action: #selector(self.quit), keyEquivalent: ""))
         clipboardItem.submenu = clipboardMenu
         deletePasswordItem.submenu = deletePasswordMenu
         addKeyItem.submenu = addKeyMenu
-        
-      /*  let keys = addInternetPasswordVC().internetKeychain.allKeys()
-        for key in keys {
-            deletePasswordMenu.addItem(NSMenuItem(title: "🚮 \(key)", action: Selector(self.deleteKey(key:"\(key)")), keyEquivalent: ""));
-        } */
-        
-     /*   for value in addInternetPasswordVC().internetKeychain.allKeys().enumerated() {
-            print("Item \(index): \(value)")
-            deletePasswordMenu.addItem(NSMenuItem(title: "🚮 \(value)", action: Selector(self.deleteKey), keyEquivalent: ""));
-            clipboardMenu.addItem(NSMenuItem(title: "🔗 \(value)", action: #selector(AppDelegate.copyToPasteboard), keyEquivalent: "")); } */
     
-    for (_, value) in addInternetPasswordVC().internetKeychain.allKeys().enumerated() {
-        deletePasswordMenu.addItem(NSMenuItem(title: "🚮 \(value)", action: Selector(self.deleteKey(key:"\(value)")), keyEquivalent: ""));
+    for key in addInternetPasswordVC().internetKeychain.allKeys() {
+        deletePasswordMenu.addItem(NSMenuItem(title: "🚮🌐 \(key)", action: #selector(deleteKey(_:)), keyEquivalent: ""));
+        clipboardMenu.addItem(NSMenuItem(title: "🔗🌐 \(key)", action: #selector(copyPasteKey(_:)), keyEquivalent: ""));
+        }
+    
+    for key in addAppPasswordVC().appKeychain.allKeys() {
+    deletePasswordMenu.addItem(NSMenuItem(title: "🚮🔑 \(key)", action: #selector(deleteKey(_:)), keyEquivalent: ""));
+    clipboardMenu.addItem(NSMenuItem(title: "🔗🔑 \(key)", action: #selector(copyPasteKey(_:)), keyEquivalent: ""));
         } }
     
     func refreshMenu() {
@@ -106,7 +101,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
     if let button = statusItem.button {
         button.title = "🔑"
-        button.action = #selector(AppDelegate.noFunction)
+        button.action = #selector(AppDelegate.refreshMenu)
         button.target = self }
         statusItem.menu = menu
     NSApp.activate(ignoringOtherApps: true) }
@@ -131,23 +126,29 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func togglePopover(sender: AnyObject?) {
         if internetPasswordPopover.isShown {
             closeInternetPopover(sender: sender) } else { showInternetPopover(sender: sender) } }
+
     
-    func copyToPasteboard() {
-        pasteboard.clearContents()
-        let token = try! addInternetPasswordVC().internetKeychain.get("\(copyString)")
-        pasteboard.setString("\(token!)", forType: NSPasteboardTypeString) }
-    
-    func deleteKey(key: String) -> String {
+    func deleteKey(_ sender: NSMenuItem) {
         do {
-        try addInternetPasswordVC().internetKeychain.remove("\(key)")
-        print("key: \(key) has been removed")
-    } catch let error {
-        print("error: \(error)") }
-     refreshMenu()
-    return key }
+            let key = sender.title.substring(from: sender.title.range(of: " ")!.upperBound)
+            try addInternetPasswordVC().internetKeychain.remove("\(key)")
+            print("key: \(key) has been removed")
+            refreshMenu()
+        } catch let error {
+            print("error: \(error)")
+        }
+    }
+
+    func copyPasteKey(_ sender: NSMenuItem) {
+        pasteboard.clearContents()
+        let key = sender.title.substring(from: sender.title.range(of: " ")!.upperBound)
+        let token = try! addInternetPasswordVC().internetKeychain.get("\(key)")
+        pasteboard.setString("\(token!)", forType: NSPasteboardTypeString)
+    }
     
     func lockKeykeeper() {
-        SecKeychainLock(keykeeper) } // lock current keykeeper
+        SecKeychainLock(keykeeper)
+    } // lock current keykeeper
 
     func dialogDismiss(question: String, text: String) -> Bool {
         let myPopup: NSAlert = NSAlert()
@@ -155,12 +156,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         myPopup.informativeText = text
         myPopup.alertStyle = NSAlertStyle.warning
         myPopup.addButton(withTitle: "Dismiss")
-        return myPopup.runModal() == NSAlertFirstButtonReturn }
+        return myPopup.runModal() == NSAlertFirstButtonReturn
+    }
     
     func noFunction() {
-        print("Placeholder func used") }
+        print("Placeholder func used")
+    }
     
-    func quit() { NSApp.terminate(self) }
+    func quit() { NSApp.terminate(self)
+    }
     
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
