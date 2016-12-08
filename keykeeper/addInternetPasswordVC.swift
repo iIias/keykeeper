@@ -48,21 +48,19 @@ class addInternetPasswordVC: NSViewController {
             .set(accountPasswordField.stringValue, key: "\(accountNameField.stringValue) » \(itemNameField.stringValue)")
             if syncCheckbox.state == NSOnState {
                 internetKeychain.synchronizable(true)
-            } else { internetKeychain.synchronizable(false) }
+            } else if syncCheckbox.state == NSOffState { internetKeychain.synchronizable(false) }
         } catch let error {
             print("error: \(error)") }
+        AppDelegate().closeInternetPopover(sender: sender as AnyObject?)
+        AppDelegate().refreshMenu()
         itemNameField.stringValue = ""
         accountNameField.stringValue = ""
         accountPasswordField.stringValue = ""
         commentField.stringValue = ""
-        AppDelegate().closeInternetPopover(sender: sender as AnyObject?)
-        AppDelegate().refreshMenu() }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
-        for (index, value) in internetKeychain.allKeys().enumerated() {
-            print("Item \(index): \(value)")
-            AppDelegate().deletePasswordMenu.addItem(NSMenuItem(title: "🚮 \(value)", action: #selector(AppDelegate.deleteKey), keyEquivalent: ""));
-            AppDelegate().clipboardMenu.addItem(NSMenuItem(title: "🔗 \(value)", action: #selector(AppDelegate.copyToPasteboard), keyEquivalent: "")); } }
     } 
+}
