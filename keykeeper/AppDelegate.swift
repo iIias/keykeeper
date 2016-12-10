@@ -34,7 +34,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @IBOutlet weak var window: NSWindow!
     let delegate = AppDelegate.self
-    var appKeychain = Keychain(service: "co.keykeeper.keykeeper")
     let pasteboard = NSPasteboard.general()
     var eventMonitor: EventMonitor?
     let menu = NSMenu()
@@ -63,19 +62,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         addKeyMenu.addItem(NSMenuItem(title: "🔑 Add Password", action: #selector(self.showAppPopover), keyEquivalent: ""))
         menu.addItem(deletePasswordItem)
         menu.addItem(NSMenuItem.separator())
+        menu.addItem(NSMenuItem(title: "🔄 Refresh", action: #selector(self.refreshMenu), keyEquivalent: ""))
         menu.addItem(NSMenuItem(title: "❌ Quit", action: #selector(self.quit), keyEquivalent: ""))
         clipboardItem.submenu = clipboardMenu
         deletePasswordItem.submenu = deletePasswordMenu
         addKeyItem.submenu = addKeyMenu
     
     for key in addInternetPasswordVC().internetKeychain.allKeys() {
-        deletePasswordMenu.addItem(NSMenuItem(title: "🚮🌐 \(key)", action: #selector(deleteKey(_:)), keyEquivalent: ""));
-        clipboardMenu.addItem(NSMenuItem(title: "🔗🌐 \(key)", action: #selector(copyPasteKey(_:)), keyEquivalent: ""));
+        deletePasswordMenu.addItem(NSMenuItem(title: "🚮🌐 \(key)", action: #selector(deleteWebKey(_:)), keyEquivalent: ""));
+        clipboardMenu.addItem(NSMenuItem(title: "🔗🌐 \(key)", action: #selector(copyPasteWebKey(_:)), keyEquivalent: ""));
         }
     
     for key in addAppPasswordVC().appKeychain.allKeys() {
-    deletePasswordMenu.addItem(NSMenuItem(title: "🚮🔑 \(key)", action: #selector(deleteKey(_:)), keyEquivalent: ""));
-    clipboardMenu.addItem(NSMenuItem(title: "🔗🔑 \(key)", action: #selector(copyPasteKey(_:)), keyEquivalent: ""));
+    deletePasswordMenu.addItem(NSMenuItem(title: "🚮🔑 \(key)", action: #selector(deleteAppKey(_:)), keyEquivalent: ""));
+    clipboardMenu.addItem(NSMenuItem(title: "🔗🔑 \(key)", action: #selector(copyPasteAppKey(_:)), keyEquivalent: ""));
         } }
     
     func refreshMenu() {
@@ -128,7 +128,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             closeInternetPopover(sender: sender) } else { showInternetPopover(sender: sender) } }
 
     
-    func deleteKey(_ sender: NSMenuItem) {
+    func deleteWebKey(_ sender: NSMenuItem) {
         do {
             let key = sender.title.substring(from: sender.title.range(of: " ")!.upperBound)
             try addInternetPasswordVC().internetKeychain.remove("\(key)")
@@ -139,10 +139,28 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
 
-    func copyPasteKey(_ sender: NSMenuItem) {
+    func deleteAppKey(_ sender: NSMenuItem) {
+        do {
+            let key = sender.title.substring(from: sender.title.range(of: " ")!.upperBound)
+            try addAppPasswordVC().appKeychain.remove("\(key)")
+            print("key: \(key) has been removed")
+            refreshMenu()
+        } catch let error {
+            print("error: \(error)")
+        }
+    }
+    
+    func copyPasteWebKey(_ sender: NSMenuItem) {
         pasteboard.clearContents()
         let key = sender.title.substring(from: sender.title.range(of: " ")!.upperBound)
         let token = try! addInternetPasswordVC().internetKeychain.get("\(key)")
+        pasteboard.setString("\(token!)", forType: NSPasteboardTypeString)
+    }
+    
+    func copyPasteAppKey(_ sender: NSMenuItem) {
+        pasteboard.clearContents()
+        let key = sender.title.substring(from: sender.title.range(of: " ")!.upperBound)
+        let token = try! addAppPasswordVC().appKeychain.get("\(key)")
         pasteboard.setString("\(token!)", forType: NSPasteboardTypeString)
     }
     
