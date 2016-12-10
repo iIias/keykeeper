@@ -20,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		4E3F07FD03C2659B599E7F96 /* Pods_keykeeper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_keykeeper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		682C65E21DFC5909005897A5 /* keykeeper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = keykeeper.entitlements; sourceTree = "<group>"; };
 		68B4BD881DEA194000A76290 /* addInternetPasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addInternetPasswordVC.swift; sourceTree = "<group>"; };
 		68B4BD891DEA194000A76290 /* addInternetPasswordVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = addInternetPasswordVC.xib; sourceTree = "<group>"; };
 		68B4BD8E1DEAF1BF00A76290 /* addAppPasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addAppPasswordVC.swift; sourceTree = "<group>"; };
@@ -68,6 +69,7 @@
 		68C5CF7E1D8E94F10008266D /* keykeeper */ = {
 			isa = PBXGroup;
 			children = (
+				682C65E21DFC5909005897A5 /* keykeeper.entitlements */,
 				68FFA2521DC8DCF2004B1132 /* EventMonitor.swift */,
 				68FFA2161DC8CA96004B1132 /* AppDelegate.swift */,
 				68B4BD8E1DEAF1BF00A76290 /* addAppPasswordVC.swift */,
