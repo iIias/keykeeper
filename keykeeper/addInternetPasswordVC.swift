@@ -33,26 +33,18 @@ class addInternetPasswordVC: NSViewController {
     @IBOutlet weak var accountNameField: NSTextField!
     @IBOutlet weak var accountPasswordField: NSSecureTextField!
     @IBOutlet weak var commentField: NSTextField!
-    @IBOutlet weak var syncCheckbox: NSButton!
-    let internetKeychain = Keychain(server: "example.com", protocolType: .https, authenticationType: .htmlForm)
+    let internetKeychain = Keychain(server: "keykeeper.co", protocolType: .https, authenticationType: .htmlForm)
     @IBAction func addPasswordButtonAction(_ sender: Any) {
-        if itemNameField.stringValue.isEmpty && accountNameField.stringValue.isEmpty && accountPasswordField.stringValue.isEmpty {
-            itemNameField.stringValue = "required"
-            accountNameField.stringValue = "required"
-            accountPasswordField.stringValue = "required"
-            commentField.stringValue = "required" }
         do { try internetKeychain
             .accessibility(.afterFirstUnlock)
+            .synchronizable(true)
             .label("keykeeper \(itemNameField.stringValue) (\(accountNameField.stringValue))")
             .comment(commentField.stringValue)
             .set(accountPasswordField.stringValue, key: "\(accountNameField.stringValue) » \(itemNameField.stringValue)")
-            if syncCheckbox.state == NSOnState {
-                internetKeychain.synchronizable(true)
-            } else if syncCheckbox.state == NSOffState { internetKeychain.synchronizable(false) }
+            AppDelegate().refreshMenu()
+            AppDelegate().closeInternetPopover(sender: sender as AnyObject?)
         } catch let error {
             print("error: \(error)") }
-        AppDelegate().closeInternetPopover(sender: sender as AnyObject?)
-        AppDelegate().refreshMenu()
         itemNameField.stringValue = ""
         accountNameField.stringValue = ""
         accountPasswordField.stringValue = ""
