@@ -14,7 +14,7 @@ TODO: Write usage instructions
 ✅ iCloud Synchonization added
 ✅ Copy Password submenu added
 ✅ Delete Password submenu added
-✅ Implemented KeychainAccess framework ([Framework](https://github.com/kishikawakatsumi/KeychainAccess))
+✅ Implemented [KeychainAccess](https://github.com/kishikawakatsumi/KeychainAccess) framework
 ## Credits
 TODO: Write credits
 ## License
