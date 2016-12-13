@@ -1,6 +1,6 @@
 # keykeeper-mac
 
-menubar password manager with style & asymmetric encryption by apple 🔑🔥
+menubar password manager with style & 3DES encryption 🔑🔥
 
 ## Planned
 
