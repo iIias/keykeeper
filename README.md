@@ -24,6 +24,7 @@ Xcode 6.3 and higher & macOS 10.9 and higher
 ### Installing
 
 Get the project folder on your system and open keykeeper.xcworkspace either via terminal or directly with Xcode (6.3++)
+(Don't forget the Podfile 😉)
 
 ## Instruments
 
@@ -35,12 +36,12 @@ If interested you're welcome to work on memory leaks with the Xcode Developer To
 4. Select 'Leaks'
 5. Choose 'keykeeper' from the process lists
 6. Click Choose to create a trace document
-7. Click the Record button in the toolbar (or press Command-R) to begin recording.
+7. Click the Record button (🔴) in the toolbar (or press Command-R) to begin recording.
 8. Use your app normally.
 
 ## Built With
 
-* [kishikawa katsumi](https://github.com/kishikawakatsumi) - KeychainAccess framework used
+* [kishikawa katsumi](https://github.com/kishikawakatsumi) - KeychainAccess framework used 🔥
 
 ## Contributing
 
