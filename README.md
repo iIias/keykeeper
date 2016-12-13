@@ -1,3 +1,5 @@
+<snippet>
+  <content><![CDATA[
 # keykeeper-mac
 menubar password manager with style &amp; asymmetric encryption by apple 🔑🔥
 ## Installation
@@ -11,10 +13,10 @@ TODO: Write usage instructions
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request 
 ## History
- iCloud Synchonization added
- Copy Password submenu added
- Delete Password submenu added
- Implemented [KeychainAccess](https://github.com/kishikawakatsumi/KeychainAccess) framework
+✅ iCloud Synchonization added
+✅ Copy Password submenu added
+✅ Delete Password submenu added
+✅ Implemented [KeychainAccess](https://github.com/kishikawakatsumi/KeychainAccess) framework
 ## Credits
 TODO: Write credits
 ## License
