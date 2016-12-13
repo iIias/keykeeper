@@ -11,7 +11,10 @@ TODO: Write usage instructions
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request :D
 ## History
-TODO: Write history
+✅ iCloud Synchonization added
+✅ Copy Password submenu added
+✅ Delete Password submenu added
+✅ Implemented KeychainAccess framework ([Framework](https://github.com/kishikawakatsumi/KeychainAccess))
 ## Credits
 TODO: Write credits
 ## License
