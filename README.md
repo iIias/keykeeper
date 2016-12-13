@@ -1,6 +1,7 @@
 <snippet>
   <content><![CDATA[
-# keykeeper-mac
+# ${1: keykeeper-mac}
+
 menubar password manager with style &amp; asymmetric encryption by apple 🔑🔥
 ## Installation
 TODO: Describe the installation process
