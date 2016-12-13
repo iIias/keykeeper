@@ -1,8 +1,7 @@
 <snippet>
   <content><![CDATA[
-# ${1: keykeeper-mac}
-
-menubar password manager with style &amp; asymmetric encryption by apple 🔑🔥
+# ${1:Project Name}
+TODO: Write a project description
 ## Installation
 TODO: Describe the installation process
 ## Usage
@@ -12,14 +11,12 @@ TODO: Write usage instructions
 2. Create your feature branch: `git checkout -b my-new-feature`
 3. Commit your changes: `git commit -am 'Add some feature'`
 4. Push to the branch: `git push origin my-new-feature`
-5. Submit a pull request 
+5. Submit a pull request :D
 ## History
-✅ iCloud Synchonization added
-✅ Copy Password submenu added
-✅ Delete Password submenu added
-✅ Implemented [KeychainAccess](https://github.com/kishikawakatsumi/KeychainAccess) framework
+1. ✅ added iCloud Synchronization as default if available
+2. ✅ 
 ## Credits
-TODO: Write credits
+Credit to [kishikawa katsumi](https://github.com/kishikawakatsumi) for his awesome [framework](https://github.com/kishikawakatsumi/KeychainAccess)
 ## License
 TODO: Write license
 ]]></content>
