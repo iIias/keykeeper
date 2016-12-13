@@ -1,9 +1,5 @@
 # keykeeper-mac
 menubar password manager with style &amp; asymmetric encryption by apple 🔑🔥
-<snippet>
-  <content><![CDATA[
-# ${1:Project Name}
-TODO: Write a project description
 ## Installation
 TODO: Describe the installation process
 ## Usage
