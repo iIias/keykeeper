@@ -18,7 +18,7 @@ These instructions will get you a copy of the project up and running on your loc
 What things you need to install the software and how to install them
 
 ```
-Xcode 6.3 and higher & macOS 10.9 and higher
+Xcode 6.3 (or higher) & macOS 10.9 (or higher)
 ```
 
 ### Installing
