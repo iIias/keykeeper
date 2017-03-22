@@ -35,20 +35,30 @@ class addInternetPasswordVC: NSViewController {
     @IBOutlet weak var commentField: NSTextField!
     let internetKeychain = Keychain(server: "keykeeper.co", protocolType: .https, authenticationType: .htmlForm)
     @IBAction func addPasswordButtonAction(_ sender: Any) {
+        if itemNameField.stringValue == "" && accountNameField.stringValue == "" {
+        } else {
         do { try internetKeychain
             .accessibility(.afterFirstUnlock)
             .synchronizable(true)
             .label("keykeeper \(itemNameField.stringValue) (\(accountNameField.stringValue))")
             .comment(commentField.stringValue)
             .set(accountPasswordField.stringValue, key: "\(accountNameField.stringValue) » \(itemNameField.stringValue)")
-            AppDelegate().refreshMenu()
-            AppDelegate().closeInternetPopover(sender: sender as AnyObject?)
         } catch let error {
             print("error: \(error)") }
+            refreshMenu()
         itemNameField.stringValue = ""
         accountNameField.stringValue = ""
         accountPasswordField.stringValue = ""
         commentField.stringValue = ""
+        }
+    }
+    
+    func refreshMenu() {
+        AppDelegate().menu.removeAllItems()
+        AppDelegate().addKeyMenu.removeAllItems()
+        AppDelegate().clipboardMenu.removeAllItems()
+        AppDelegate().deletePasswordMenu.removeAllItems()
+        AppDelegate().addMenuItems()
     }
 
     override func viewDidLoad() {

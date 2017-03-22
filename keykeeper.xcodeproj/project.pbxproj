@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 47;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,6 +21,7 @@
 /* Begin PBXFileReference section */
 		4E3F07FD03C2659B599E7F96 /* Pods_keykeeper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_keykeeper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		682C65E21DFC5909005897A5 /* keykeeper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = keykeeper.entitlements; sourceTree = "<group>"; };
+		688EFFAF1E005AFE005DB5A8 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		68B4BD881DEA194000A76290 /* addInternetPasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addInternetPasswordVC.swift; sourceTree = "<group>"; };
 		68B4BD891DEA194000A76290 /* addInternetPasswordVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = addInternetPasswordVC.xib; sourceTree = "<group>"; };
 		68B4BD8E1DEAF1BF00A76290 /* addAppPasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addAppPasswordVC.swift; sourceTree = "<group>"; };
@@ -97,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				4E3F07FD03C2659B599E7F96 /* Pods_keykeeper.framework */,
+				688EFFAF1E005AFE005DB5A8 /* Cocoa.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -143,12 +145,15 @@
 							com.apple.Keychain = {
 								enabled = 1;
 							};
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
 						};
 					};
 				};
 			};
 			buildConfigurationList = 68C5CF771D8E94F10008266D /* Build configuration list for PBXProject "keykeeper" */;
-			compatibilityVersion = "Xcode 8.0";
+			compatibilityVersion = "Xcode 6.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
