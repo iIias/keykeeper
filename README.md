@@ -2,12 +2,11 @@
 
 menubar password manager with style & 3DES encryption 🔑🔥
 
-## Planned
+## Needed
 
-1. Neural Network to predict which key you are most likely to use next and sort it in that order
+1. Model to predict which key you are most likely to use next and sort it in that order
 2. Unlock your keychain with a physical device (like a flash-drive)
-3. Remove unneccesarry memory leaks
-4. Improve use of popover events and the way you close them
+3. Improve use of popover events and the way you close them
 
 ## Getting Started
 
